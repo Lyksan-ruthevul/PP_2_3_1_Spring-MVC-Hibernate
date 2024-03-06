@@ -5,7 +5,7 @@ import web.model.User;
 import java.util.List;
 
 public interface UserDAO {
-    List<User> allUsers();
+    List<User> displayAllUsers();
 
     void saveUser(User user);
 

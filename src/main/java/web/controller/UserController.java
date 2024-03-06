@@ -19,8 +19,8 @@ public class UserController {
     }
 
     @GetMapping("/")
-    public String allUsers(Model model) {
-        model.addAttribute("allUsers", userService.allUsers());
+    public String displayAllUsers(Model model) {
+        model.addAttribute("allUsers", userService.displayAllUsers());
         return "all-users";
     }
 
