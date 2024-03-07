@@ -24,20 +24,20 @@ public class UserController {
         return "all-users";
     }
 
-    @GetMapping("/addNewUser")
-    public String addNewUser(Model model) {
+    @GetMapping("/showAddNewUserForm")
+    public String showAddNewUserForm(Model model) {
         model.addAttribute("addUser", new User());
         return "add-user";
     }
 
-    @PostMapping("/saveUser")
-    public String saveUser(@ModelAttribute("addUser") User user) {
+    @PostMapping("/addUser")
+    public String addUser(@ModelAttribute("addUser") User user) {
         userService.saveUser(user);
         return "redirect:/";
     }
 
-    @GetMapping(value = "/editUser")
-    public String editUser(@RequestParam("id") int id, Model model) {
+    @GetMapping(value = "/showEditUserForm")
+    public String showEditUserForm(@RequestParam("id") int id, Model model) {
         User user = userService.getUser(id);
         model.addAttribute("user", user);
         return "edit-user";

@@ -20,7 +20,7 @@
         <td th:text="${user.surname}"></td>
         <td th:text="${user.age}"></td>
         <td>
-            <form method="get" th:action="@{'/editUser'}">
+            <form method="get" th:action="@{'/showEditUserForm'}">
                 <input type="hidden" name="id" th:value="${user.id}"/>
                 <input type="submit" value="Edit">
             </form>
@@ -34,7 +34,7 @@
     </tr>
 </table>
 <br>
-<form method="get" action="addNewUser">
+<form method="get" action="showAddNewUserForm">
     <input type="submit" value="Add">
 </form>
 </body>
